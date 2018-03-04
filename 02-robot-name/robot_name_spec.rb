@@ -14,30 +14,28 @@ describe "Robot Name" do
   it "Must have a name" do
     # `must_match` is looking to verify the format of the name
     # see the README for specs regarding name format
-    expect(Robot.new.name).must_match NAME_REGEXP
+    expect(RobotName.new.name).must_match NAME_REGEXP
   end
 
   it "Check that the name sticks" do
-    skip
-    robot = Robot.new
-    name  = robot.name
+    robot = RobotName.new
+    name = robot.name
 
     expect(robot.name).must_equal robot.name
     expect(robot.name).must_equal name
   end
 
   it "Check different robots have different names" do
-    skip
     # there is a very, very small probability of name collision here
     # ensuring the name is globally unique is beyond the scope of this exercise
 
-    expect(Robot.new.name).wont_equal Robot.new.name
+    expect(RobotName.new.name).wont_equal RobotName.new.name
 
   end
 
   it "Check reset name" do
-    skip
-    robot = Robot.new
+    # skip
+    robot = RobotName.new
     name = robot.name
 
     robot.reset
